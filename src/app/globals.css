@@ -37,6 +37,12 @@
     --sidebar: 30 31 32;
     --dashboard: 19 20 21;
     --greyish: 166 166 166;
+    --greenish: 30 47 41;
+    --networth: 28 29 30;
+    --greentext: 102 206 135;
+    --networth-categories: 35 37 38;
+    --assets: 19 20 21;
+    --networth-periods: 69 69 69;
   }
 
   .dark {

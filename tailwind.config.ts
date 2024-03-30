@@ -7,6 +7,8 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    // Path to Tremor module
+    './node_modules/@tremor/**/*.{js,ts,jsx,tsx}',
   ],
   prefix: "",
   theme: {
@@ -25,6 +27,9 @@ const config = {
         sidebar: "rgb(var(--sidebar))",
         dashboard: "rgb(var(--dashboard))",
         greyish: "rgb(var(--greyish))",
+        networth: "rgb(var(--networth))",
+        greenish: "rgb(var(--greenish))",
+        greentext: "rgb(var(--greentext))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
