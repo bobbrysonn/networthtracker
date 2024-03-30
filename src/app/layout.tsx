@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import SideBar from "@/components/sidebar";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -20,10 +21,12 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
+          "grid grid-cols-[20rem_auto]",
           inter.variable,
         )}
       >
-        {children}
+        <SideBar />
+        <main className={"bg-dashboard text-white"}>{children}</main>
       </body>
     </html>
   );
