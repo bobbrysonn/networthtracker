@@ -22,7 +22,7 @@ export default function SideBar() {
   const isActive = (path: string) => path === pathname;
 
   return (
-    <aside className={"bg-sidebar min-h-screen px-6 py-5 text-greyish"}>
+    <aside className={"bg-sidebar min-h-screen px-4 py-5 text-greyish"}>
       {/* Brand name or link */}
       <Link
         className={"flex items-center mb-3 gap-4 px-4 py-4 text-white"}
@@ -39,7 +39,9 @@ export default function SideBar() {
             <Link
               key={link.id}
               href={link.path}
-              className={`${isActive(link.path) && "bg-[#0f1010] text-white"} hover:bg-[#111212] hover:text-white flex gap-4 items-center p-4 rounded-md transtion-colors duration-500`}
+              className={`${
+                isActive(link.path) && "bg-[#0f1010] text-white"
+              } hover:bg-[#111212] hover:text-white flex gap-4 items-center p-4 rounded-md transtion-colors duration-500`}
             >
               {link.icon}
               <p className={"font-medium"}>{link.name}</p>
