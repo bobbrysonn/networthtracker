@@ -1,25 +1,67 @@
-import { ArrowUp, Plus } from "lucide-react";
+"use client";
+
+import {
+  ArrowUp,
+  BadgeJapaneseYen,
+  Bitcoin,
+  CandlestickChart,
+  Car,
+  Home,
+  Plus,
+  Shuffle,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs } from "@/components/ui/tabs";
 import { PT_Mono, Roboto_Mono } from "next/font/google";
-import { AreaChart, CategoryBar, Tracker } from "@tremor/react";
+import { AreaChart, BarList, Tracker } from "@tremor/react";
 import { Separator } from "@/components/ui/separator";
 
 const pt_mono = PT_Mono({ weight: ["400"], subsets: ["latin"] });
 const roboto = Roboto_Mono({ weight: ["400", "700"], subsets: ["latin"] });
+const category_data = [
+  {
+    color: "#5082ef",
+    name: "Accounts",
+    value: 38,
+    icon: () => (
+      <BadgeJapaneseYen height={20} className={"text-gray-100 mr-2"} />
+    ),
+  },
+  {
+    color: "#94cef6",
+    name: "Stocks",
+    value: 17,
+    icon: () => (
+      <CandlestickChart height={20} className={"text-gray-100 mr-2"} />
+    ),
+  },
+  {
+    color: "#95cfcd",
+    name: "Crypto",
+    value: 14,
+    icon: () => <Bitcoin height={20} className={"text-gray-100 mr-2"} />,
+  },
+  {
+    color: "#a767e3",
+    name: "Real Estate",
+    value: 11,
+    icon: () => <Home height={20} className={"text-gray-100 mr-2"} />,
+  },
+  {
+    name: "Cars",
+    value: 10,
+    icon: () => <Car height={20} className={"text-gray-100 mr-2"} />,
+  },
+  {
+    name: "Others",
+    value: 10,
+    icon: () => <Shuffle height={20} className={"text-gray-100 mr-2"} />,
+  },
+];
 const chartdata = [
-  {
-    date: "Jan",
-    amount: 50,
-  },
-  {
-    date: "Feb",
-    amount: 120,
-  },
-  {
-    date: "Mar",
-    amount: 240,
-  },
+  { date: "Jan", amount: 50 },
+  { date: "Feb", amount: 120 },
+  { date: "Mar", amount: 240 },
   { date: "Apr", amount: 200 },
   { date: "May", amount: 432 },
   { date: "Jun", amount: 636 },
@@ -265,9 +307,15 @@ export default function Dashboard() {
             "bg-[rgb(35,37,38)] border border-[rgb(45,45,45)] col-span-4 p-6 rounded-r-xl"
           }
         >
-          <div className={"mb-4"}>
+          <div className={"mb-8 text-white"}>
             <h3 className={"font-medium text-lg"}>Categories</h3>
-            <Tracker data={data} className="mt-2 h-6" />
+            <BarList
+              data={category_data}
+              className="mt-2"
+              color={"zinc-100"}
+              showAnimation={true}
+              style={{ "--tw-bg-opacity": 1 } as React.CSSProperties}
+            />
           </div>
 
           <Separator className="bg-zinc-700" />
